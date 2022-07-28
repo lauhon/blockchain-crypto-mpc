@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "test_bip_derive(test_key_t&amp;, bool, unsigned int, test_key_t&amp;, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):mpc_crypto_test.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "test_bip():mpc_crypto_test.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "test_client_server(test_key_t&amp;, test_context_t&amp;):mpc_crypto_test.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -90,6 +90,8 @@
 		514BDB8821AAE94B007A51AA /* mpc_crypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 514BDB8721AAE94B007A51AA /* mpc_crypto.h */; };
 		514BDB8921AAF1C4007A51AA /* mpc_crypto_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514BDB1621AAE7C5007A51AA /* mpc_crypto_test.cpp */; };
 		514BDB8A21AAF276007A51AA /* precompiled.h in Headers */ = {isa = PBXBuildFile; fileRef = 514BDB0D21AAE7C5007A51AA /* precompiled.h */; };
+		CF71547528917F0300117318 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF71547328917F0300117318 /* libcrypto.a */; };
+		CF71547628917F0300117318 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF71547428917F0300117318 /* libssl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +191,8 @@
 		514BDB3121AAE7C6007A51AA /* mpc_core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mpc_core.cpp; sourceTree = "<group>"; };
 		514BDB3221AAE7C6007A51AA /* mpc_core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpc_core.h; sourceTree = "<group>"; };
 		514BDB8721AAE94B007A51AA /* mpc_crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mpc_crypto.h; path = ../../include/mpc_crypto.h; sourceTree = "<group>"; };
+		CF71547328917F0300117318 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../OpenSSL/macosx/lib/libcrypto.a; sourceTree = "<group>"; };
+		CF71547428917F0300117318 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../OpenSSL/macosx/lib/libssl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +207,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF71547528917F0300117318 /* libcrypto.a in Frameworks */,
+				CF71547628917F0300117318 /* libssl.a in Frameworks */,
 				514BDA2121AAE727007A51AA /* MPCCrypto_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +222,7 @@
 				514BDA1921AAE726007A51AA /* MPCCrypto-macOS */,
 				514BDA2421AAE727007A51AA /* MPCCrypto-macOSTests */,
 				514BDA1821AAE726007A51AA /* Products */,
+				CF71547228917F0300117318 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -351,6 +358,15 @@
 			);
 			name = mpc_protocols;
 			path = ../../src/mpc_protocols;
+			sourceTree = "<group>";
+		};
+		CF71547228917F0300117318 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF71547328917F0300117318 /* libcrypto.a */,
+				CF71547428917F0300117318 /* libssl.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -691,7 +707,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				HEADER_SEARCH_PATHS = "/usr/local/opt/openssl/include/ ";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../OpenSSL/macosx/include\"";
+
 				INFOPLIST_FILE = "MPCCrypto-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -699,7 +716,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = /usr/local/opt/openssl/lib;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../OpenSSL/macosx/lib\"";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-maes",
@@ -727,7 +744,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				HEADER_SEARCH_PATHS = "/usr/local/opt/openssl/include/ ";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../OpenSSL/macosx/include\"";
 				INFOPLIST_FILE = "MPCCrypto-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -735,7 +752,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = /usr/local/opt/openssl/lib;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../OpenSSL/macosx/lib\"";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-maes",
@@ -756,15 +773,15 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = DYU2YCUJM2;
-				HEADER_SEARCH_PATHS = "/usr/local/opt/openssl/include/ ";
+				DEVELOPMENT_TEAM = BXB7RBS9FX;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../OpenSSL/macosx/include\"";
 				INFOPLIST_FILE = "MPCCrypto-macOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = /usr/local/opt/openssl/lib;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../OpenSSL/macosx/lib\"";
 				OTHER_LDFLAGS = (
 					"-lcrypto",
 					"-lssl",
@@ -779,15 +796,15 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = DYU2YCUJM2;
-				HEADER_SEARCH_PATHS = "/usr/local/opt/openssl/include/ ";
+				DEVELOPMENT_TEAM = BXB7RBS9FX;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../OpenSSL/macosx/include\"";
 				INFOPLIST_FILE = "MPCCrypto-macOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = /usr/local/opt/openssl/lib;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../OpenSSL/macosx/lib\"";
 				OTHER_LDFLAGS = (
 					"-lcrypto",
 					"-lssl",
